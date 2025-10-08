@@ -1,19 +1,31 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"],
-  "enabledManagers": ["npm", "poetry"],
-  "schedule": ["* * * * *"],
+  "extends": [
+    "config:recommended"
+  ],
+  "enabledManagers": [
+    "npm",
+    "poetry"
+  ],
+  "schedule": [
+    "* * * * *"
+  ],
   "packageRules": [
     {
-      "updateTypes": ["minor", "patch"],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
       "groupName": "All Minor and Patch Updates"
     },
     {
-      "updateTypes": ["major"],
+      "matchUpdateTypes": [
+        "major"
+      ],
       "groupName": "All Major Updates"
     }
   ],
-  "recreateClosed": true,
+  "recreateWhen": "always",
   "prHourlyLimit": 0,
   "prConcurrentLimit": 0
 }
